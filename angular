@@ -1,0 +1,18 @@
+to add route: ng g module m2m --routing
+
+only to create module with routing : ng g module m2m
+
+to create component: ng g c m2m/connections
+
+target in chrom :  "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir="C:/ChromeDevSession"
+
+
+confirmation dialog->.component 
+to create service: ng g s m2m/services/usages --module=m2m/m2m.module
+
+
+
+https://stackblitz.com/edit/angular-google-maps-demo-lkghsj?file=app/app.component.ts
+
+ng g p common/pipe/noComma --module=m2m/m2m.module
+
