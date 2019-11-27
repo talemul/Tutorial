@@ -1,0 +1,7 @@
+clone : git -c http.sslVerify=false clone "URL of repository"   
+git config --global http.sslVerify false
+
+more command :https://github.com/joshnh/Git-Commands
+file add wildcut: git add . 
+
+Switch to a branch : git checkout m2mcc
