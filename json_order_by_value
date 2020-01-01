@@ -1,0 +1,8 @@
+            $jsondata=[{"name":"Dhaka","value":"Dhaka","home_delivery":"Home Delivery"},{"name":"Savar City","value":"Savar City","home_delivery":"Spot Delivery"},{"name":"Dhaka (Sub-Area)","value":"Dhaka (Sub-Area)","home_delivery":"Home Delivery"}];
+            $array = json_decode($jsondata), true);
+            $data=[];
+            foreach ($array as $val){
+                $data[$val['name']]=$val;
+            }
+             sort($data,0);
+            var_dump($data);
