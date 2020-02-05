@@ -1,0 +1,34 @@
+function sortJson(json){
+   var sortedJson;
+   sortedJson = '';
+   if (json instanceof Array) {
+      sortedJson += '[';
+      sortedJson += json.map(function(item) {
+         return sortJson(item);
+      }).join(',');
+      sortedJson += ']';
+   } else if (json === null) {
+      sortedJson += 'null';
+   } else {
+      switch (typeof json) {
+         case 'undefined':
+            sortedJson += 'null';
+            break;
+         case 'string':
+            sortedJson += '"' + json + '"';
+            break;
+         case 'number':
+         case 'boolean':
+            sortedJson += json;
+            break;
+         case 'object':
+            sortedJson += '{';
+            sortedJson += Object.keys(json).sort().map(function(key) {
+               return '"' + key + '":' + sortJson(json[key]);
+            }).join(',');
+            sortedJson += '}';
+            break;
+      }
+   }
+   return sortedJson;
+}   
