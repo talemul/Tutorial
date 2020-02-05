@@ -3,3 +3,5 @@ https://stackoverflow.com/questions/41318252/running-a-docker-compose-getting-st
 https://phpdocker.io/generator
 https://stackblitz.com/edit/angular-google-chart
 http://phaser.io/learn
+https://jakir.me/
+https://python.howtocode.com.bd/
