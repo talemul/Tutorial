@@ -5,3 +5,5 @@ more command :https://github.com/joshnh/Git-Commands
 file add wildcut: git add . 
 
 Switch to a branch : git checkout m2mcc
+to see git clone url : git config --get remote.origin.url
+
