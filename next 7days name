@@ -1,0 +1,15 @@
+$timestamp = strtotime(date('Y-m-d'));
+    $days = array();
+    for ($i = 0; $i < 7; $i++) {
+        if($i==0){
+            $days[] = strftime('Today %d %b ', $timestamp);
+        }elseif ($i==1){
+            $days[] = strftime('Tomorrow %d %b ', $timestamp);
+        }else{
+           $days[] = strftime('%A %d %b ', $timestamp);
+        }
+
+        $timestamp = strtotime('+1 day', $timestamp);
+    }
+    
+    
