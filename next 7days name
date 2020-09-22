@@ -12,4 +12,15 @@ $timestamp = strtotime(date('Y-m-d'));
         $timestamp = strtotime('+1 day', $timestamp);
     }
     
-    
+        $time_slot=array();
+    $timestamp = strtotime(date('Y-m-d'));
+    $timestamp = strtotime('+1 day', $timestamp);
+    $first=strftime('%I:00 %p', $timestamp);
+     for ($i = 0; $i < 22; $i++) {
+         $timestamp = strtotime('+1 hour', $timestamp);
+           $last = strftime('%I:00 %p', $timestamp);
+           if($i>=8){
+              $time_slot[]=$first.' - '.$last;
+           }
+           $first=$last;
+    }
