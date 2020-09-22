@@ -12,7 +12,8 @@ $timestamp = strtotime(date('Y-m-d'));
         $timestamp = strtotime('+1 day', $timestamp);
     }
     
-        $time_slot=array();
+
+    $time_slot=array();
     $timestamp = strtotime(date('Y-m-d'));
     $timestamp = strtotime('+1 day', $timestamp);
     $first=strftime('%I:00 %p', $timestamp);
@@ -23,4 +24,22 @@ $timestamp = strtotime(date('Y-m-d'));
               $time_slot[]=$first.' - '.$last;
            }
            $first=$last;
+            if($last=='10:00 PM'){
+                     break;
+                 }
+    }
+
+         $time_slot_today=array();
+    $timestamp = strtotime(date('Y-m-d H:i:s'));
+    $timestamp = strtotime('+1 hour', $timestamp);
+   // $timestamp = strtotime('+1 day', $timestamp);
+    $first=strftime('%I:00 %p', $timestamp);
+     for ($i = 0; $i < 24; $i++) {
+         $timestamp = strtotime('+1 hour', $timestamp);
+            $last = strftime('%I:00 %p', $timestamp);
+            $time_slot_today[]=$first.' - '.$last;
+           $first=$last;
+                 if($last=='10:00 PM'){
+                     break;
+                 }
     }
