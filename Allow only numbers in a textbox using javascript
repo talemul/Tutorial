@@ -21,16 +21,31 @@
                 alert(err.Description);
             }
         } 
-function number_validation_for_input(number){
-    var n=number.value;
+
+function convert_number(number) {
+    var newPrice = number.replace(/[^0-9\.]/g, '');
+    var decimalPoints = newPrice.match(/\./g);
+    var final_value = newPrice;
+    if (decimalPoints && decimalPoints.length > 1) {
+        var res = newPrice.split(".");
+        final_value = res[0] + '.' + res[1];
+    }
+    if (final_value == "") {
+        final_value = "0";
+    }
+    return parseFloat(final_value);
+}
+
+function number_validation_for_input(number) {
+    var n = number.value;
     var newPrice = n.replace(/[^0-9\.]/g, '');
     var decimalPoints = newPrice.match(/\./g);
-    var final_value=newPrice;
-    if(decimalPoints && decimalPoints.length > 1){
-        var res=newPrice.split(".");
-        final_value=res[0]+'.'+res[1];
+    var final_value = newPrice;
+    if (decimalPoints && decimalPoints.length > 1) {
+        var res = newPrice.split(".");
+        final_value = res[0] + '.' + res[1];
     }
-    number.value=final_value;
+    number.value = final_value;
 }
     </script>
 </head>
