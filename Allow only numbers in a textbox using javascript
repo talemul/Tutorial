@@ -21,7 +21,17 @@
                 alert(err.Description);
             }
         } 
-
+function number_validation_for_input(number){
+    var n=number.value;
+    var newPrice = n.replace(/[^0-9\.]/g, '');
+    var decimalPoints = newPrice.match(/\./g);
+    var final_value=newPrice;
+    if(decimalPoints && decimalPoints.length > 1){
+        var res=newPrice.split(".");
+        final_value=res[0]+'.'+res[1];
+    }
+    number.value=final_value;
+}
     </script>
 </head>
 <body>
@@ -35,6 +45,7 @@
             <td>
 <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')">
 <input type="text" onkeyup="this.value=this.value.replace(/[^\d.-]/g, '')">
+<input type="text" oninput="number_validation_for_input(this)">
 <input type="text" oninput="this.value=this.value.replace(/\D/g, '')">
  <input class="form-control" name="name" type="text" placeholder=""
    value="" oninput="this.value=this.value.replace(/[^A-Za-z\s.-]/g, '')"   
